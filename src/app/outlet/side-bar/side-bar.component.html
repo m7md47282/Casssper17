@@ -1,0 +1,31 @@
+<mat-sidenav-container>
+    <mat-sidenav #sidenav opened 
+        mode="side" [style.width]="sideBarWidth" 
+        (mouseover)="toggleSideBarIn()"
+        (mouseleave)="toggleSideBarOut()">
+        <ul class="side-bar-list" [ngClass]="{'opened': isSideBarOpen}">
+ 
+            <li class="side-bar-item clickable" *ngFor="let item of menu">
+                <div class="item-title-container" (click)="toggleSubMenu(item)" [routerLink]="item?.routerLink">
+                    <mat-icon class="side-bar-icons">{{item.icon}}</mat-icon>
+                    <span class="item-title clickable">{{item.title}}</span>
+                </div>
+                
+                <ul class="nested-list" *ngIf="!!item?.subMenu?.length"  [ngClass]="{'showSubMenu': isSubMenuOpen(item)}">
+                    <li *ngFor="let item of item?.subMenu" class="clickable items-center gap-10" [routerLink]="item?.routerLink">
+                        <mat-icon class="side-bar-icons">{{item.icon}}</mat-icon>
+                        <span>{{item.title}}</span>
+                    </li>
+                </ul>
+                
+            </li>
+
+        </ul>
+
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div class="main">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

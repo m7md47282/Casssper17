@@ -1,0 +1,29 @@
+@import ../../../defaults/_variables
+
+.card-settings-container
+    ::ng-deep mat-tab-group
+        padding: 10px
+        border-radius: 5px
+        flex-direction: row
+        .mat-mdc-tab-header
+            background: #EFEFEF
+            padding: 10px
+            border-radius: 10px
+            width: 120px 
+            .mat-mdc-tab-labels
+                flex-direction: column
+        .mat-mdc-tab-body-wrapper
+            width: calc( 100% - 120px )
+            mat-tab-body
+                padding: 10px 20px
+            .mat-mdc-tab-body-content
+                padding: 10px
+        .settigns
+            .small-input
+                width: 80px
+            h4
+                color: $black
+                font-size: 14px
+
+            .settigns-row
+                margin-bottom: 20px 
