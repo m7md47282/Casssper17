@@ -3,21 +3,61 @@
         <mat-tab label="Body"> 
             <div class="settigns">
                 <div class="settigns-row">
-                    <h4>Body</h4>
                     <div class="flex-row">
-                        <div class="form-input cool-label" >
-                            <label for="">Width</label>
-                            <input type="number" class="small-input">
+
+                        <div class="margin-x-10">
+                            <h4>Body</h4>
+                            <div class="flex-row margin-x-10">
+                                <div class="form-input cool-label" >
+                                    <input type="number" attr-label="Width" name="boderWidth" [(ngModel)]="cardSettings.body.width"  class="small-input">
+                                    <label for="boderWidth">Width</label>
+                                </div>
+                                <div class="form-input cool-label" >
+                                    <input type="number" attr-label="Width" name="boderWidth" [(ngModel)]="cardSettings.body.height"  class="small-input">
+                                    <label for="boderWidth">Height</label>
+                                </div>
+                                <div class="form-input cool-label" >
+                                    <input type="number" attr-label="Width" name="boderWidth" [(ngModel)]="cardSettings.body.padding"  class="small-input">
+                                    <label for="boderWidth">Padding</label>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-               
-                <div class="settigns-row">
-                    <h4>Border</h4>
-                    <div class="flex-row">
+
+                        <div class="margin-x-10">
+                            <h4>Oriantation</h4>
+                            <div class="flex-row">
+                                <div class="margin-x-10">
+
+                                    <mat-chip-listbox aria-label="Oriantation" [(ngModel)]="cardSettings.body.oriantation">
+                                        <mat-chip-option value="horizantal">Horizantal</mat-chip-option>
+                                        <mat-chip-option value="vertical">Vertical</mat-chip-option>
+                                      </mat-chip-listbox>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="margin-x-10">
+                            <h4>Border</h4>
+                            <div class="flex-row margin-x-10">
+                                <div class="form-input cool-label" >
+                                    <input type="number" attr-label="Width" name="boderWidth" [(ngModel)]="cardSettings.body.borderWidth"  class="small-input">
+                                    <label for="boderWidth">Width</label>
+                                </div>
+                                <div class="form-input cool-label" >
+                                    <input type="number" attr-label="Width" name="boderWidth" [(ngModel)]="cardSettings.body.borderWidth"  class="small-input">
+                                    <label for="boderWidth">Radius</label>
+                                </div>
+                                <div class="form-input cool-label" >
+                                    <input type="color" attr-label="Width" name="boderWidth" [(ngModel)]="cardSettings.body.borderColor"  class="small-input">
+                                    <label for="boderWidth">Color</label>
+                                </div>
+                            </div>
+                        </div>
+
                        
                     </div>
                 </div>
+               
             </div>
         </mat-tab>
         <mat-tab label="Image"> Image </mat-tab>
@@ -27,6 +67,11 @@
       </mat-tab-group>
 
       <div class="preview">
-        
+            <app-card [card]="cardSettings"></app-card>
       </div>
+</div>
+
+<div class="card-preview items-center content-center">
+
+    
 </div>
