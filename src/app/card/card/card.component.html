@@ -1,28 +1,65 @@
-<div class="card" [ngStyle]="cardStyle()">
-    <div class="card-header">
-        <div class="image-container">
-            <img [ngStyle]="imageStyle()" src="../../../assets/images/default-card-image.png" alt="">
+<div class="card-container content-center items-center">
+    <div *ngFor="let i of emtyArray" class="card" [ngStyle]="{
+        'width': card().body.width + px,
+        'height': card().body.height + px,
+        'border': card().body.borderWidth + 'px solid ' + card().body.borderColor,
+        'border-radius': card().body.borderRadius + px,
+        'padding': card().body.padding + px,
+    }">
+        <div class="card-header">
+            <div class="image-container">
+                <img [ngStyle]="{
+                    'width': card().image.width + percent,
+                    'border-radius': card().image.radius + px,
+                }"
+                src="../../../assets/images/default-card-image.png" alt="">
+            </div>
         </div>
-    </div>
-    <div class="card-content">
-        <div class="title">
-            <h2>This is the title of the thing</h2>
+        <div class="card-content">
+            <div class="title">
+                <h2
+                [ngStyle]="{
+                    fontSize: card().title.fontSize + px,
+                    color: card().title.color,
+                    letterSpacing: card().title.letterSpacing + px
+                }"
+                >This is the title of the thing</h2>
+            </div>
+    
+            <div class="desciption">
+                <p
+                [ngStyle]="{
+                    fontSize: card().description.fontSize + px,
+                    color: card().description.color,
+                    letterSpacing: card().description.letterSpacing + px
+                }"
+                >
+                    sthis is the description that descripe the thing that is showing
+                </p>
+            </div>
+    
+            <div class="tags">
+                <span
+                [ngStyle]="{
+                    fontSize: card().tags.fontSize + px,
+                    color: card().tags.color,
+                    letterSpacing: card().tags.letterSpacing + px
+                }"
+                >
+                    #hoodie#men#tshirt
+                </span>
+            </div>
         </div>
-
-        <div class="desciption">
-            <p>
-                sthis is the description that descripe the thing that is showing
-            </p>
-        </div>
-
-        <div class="tags">
-            #hoodie#men#tshirt
-        </div>
-    </div>
-    <div class="card-footer">
-        <div class="price">
-            <b>00.00$</b>
+        <div class="card-footer">
+            <div class="price">
+                <b
+                [ngStyle]="{
+                    fontSize: card().price.fontSize + px,
+                    color: card().price.color,
+                    letterSpacing: card().price.letterSpacing + px
+                }"
+                >00.00$</b>
+            </div>
         </div>
     </div>
 </div>
-

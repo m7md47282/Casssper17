@@ -15,15 +15,25 @@
         .mat-mdc-tab-body-wrapper
             width: calc( 100% - 120px )
             mat-tab-body
-                padding: 10px 20px
+                padding: 0 20px
+                min-height: 400px
             .mat-mdc-tab-body-content
-                padding: 10px
+                padding: 0
+                background-color: white
+                border-radius: 10px
         .settigns
+            padding: 22px 10px
             .small-input
                 width: 80px
             h4
                 color: $black
                 font-size: 14px
 
+
             .settigns-row
+                display: flex
+                gap: 10px
                 margin-bottom: 20px 
+                .settigns-inner-row
+                    margin-bottom: 20px
+                    margin-inline: 10px

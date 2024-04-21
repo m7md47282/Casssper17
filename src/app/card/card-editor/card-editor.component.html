@@ -3,9 +3,9 @@
         <mat-tab label="Body"> 
             <div class="settigns">
                 <div class="settigns-row">
-                    <div class="flex-row">
+                    <div class="flex-column">
 
-                        <div class="margin-x-10">
+                        <div class="settigns-inner-row">
                             <h4>Body</h4>
                             <div class="flex-row margin-x-10">
                                 <div class="form-input cool-label" >
@@ -23,7 +23,7 @@
                             </div>
                         </div>
 
-                        <div class="margin-x-10">
+                        <div class="settigns-inner-row">
                             <h4>Oriantation</h4>
                             <div class="flex-row">
                                 <div class="margin-x-10">
@@ -36,7 +36,7 @@
                             </div>
                         </div>
 
-                        <div class="margin-x-10">
+                        <div class="settigns-inner-row">
                             <h4>Border</h4>
                             <div class="flex-row margin-x-10">
                                 <div class="form-input cool-label" >
@@ -44,7 +44,7 @@
                                     <label for="boderWidth">Width</label>
                                 </div>
                                 <div class="form-input cool-label" >
-                                    <input type="number" attr-label="Width" name="boderWidth" [(ngModel)]="cardSettings.body.borderWidth"  class="small-input">
+                                    <input type="number" attr-label="Width" name="boderWidth" [(ngModel)]="cardSettings.body.borderRadius"  class="small-input">
                                     <label for="boderWidth">Radius</label>
                                 </div>
                                 <div class="form-input cool-label" >
@@ -60,10 +60,112 @@
                
             </div>
         </mat-tab>
-        <mat-tab label="Image"> Image </mat-tab>
-        <mat-tab label="Title"> Title </mat-tab>
-        <mat-tab label="content"> Content  </mat-tab>
-        <mat-tab label="pricing"> pricing </mat-tab>
+        <mat-tab label="Image"> 
+            <div class="settigns">
+                <div class="settigns-row">
+                    <div class="flex-column">
+
+                        <div class="settigns-inner-row">
+                            <h4>Image</h4>
+                            <div class="flex-row margin-x-10">
+                                <div class="form-input cool-label" >
+                                    <input type="number" attr-label="Width" name="imageWidth" [(ngModel)]="cardSettings.image.width"  class="small-input">
+                                    <label for="boderWidth">Width</label>
+                                </div>
+                                <div class="form-input cool-label" >
+                                    <input type="number" attr-label="Width" name="imageRadius" [(ngModel)]="cardSettings.image.radius"  class="small-input">
+                                    <label for="boderWidth">Radius</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </mat-tab>
+
+
+        <mat-tab label="Content"> 
+            <div class="settigns">
+                <div class="settigns-row">
+                    <div class="flex-column">
+                        <div class="settigns-inner-row">
+                            <h4>Title</h4>
+                            <div class="flex-row margin-x-10">
+                                <div class="form-input cool-label" >
+                                    <input type="number" attr-label="Width" name="imageWidth" [(ngModel)]="cardSettings.title.fontSize"  class="small-input">
+                                    <label for="boderWidth">Font size</label>
+                                </div>
+                                <div class="form-input cool-label" >
+                                    <input type="number" attr-label="Width" name="imageWidth" [(ngModel)]="cardSettings.title.letterSpacing"  class="small-input">
+                                    <label for="boderWidth">Space</label>
+                                </div>
+                                <div class="form-input cool-label" >
+                                    <input type="color" attr-label="Width" name="imageRadius" [(ngModel)]="cardSettings.title.color"  class="small-input">
+                                    <label for="boderWidth">Font color</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="settigns-inner-row">
+                            <h4>Descritopn</h4>
+                            <div class="flex-row margin-x-10">
+                                <div class="form-input cool-label" >
+                                    <input type="number" attr-label="Width" name="imageWidth" [(ngModel)]="cardSettings.description.fontSize"  class="small-input">
+                                    <label for="boderWidth">Font size</label>
+                                </div>
+                                <div class="form-input cool-label" >
+                                    <input type="number" attr-label="Width" name="imageWidth" [(ngModel)]="cardSettings.description.letterSpacing"  class="small-input">
+                                    <label for="boderWidth">Space</label>
+                                </div>
+                                <div class="form-input cool-label" >
+                                    <input type="color" attr-label="Width" name="imageRadius" [(ngModel)]="cardSettings.description.color"  class="small-input">
+                                    <label for="boderWidth">Font color</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="settigns-inner-row">
+                            <h4>Tags</h4>
+                            <div class="flex-row margin-x-10">
+                                <div class="form-input cool-label" >
+                                    <input type="number" attr-label="Width" name="imageWidth" [(ngModel)]="cardSettings.tags.fontSize"  class="small-input">
+                                    <label for="boderWidth">Font size</label>
+                                </div>
+                                <div class="form-input cool-label" >
+                                    <input type="number" attr-label="Width" name="imageWidth" [(ngModel)]="cardSettings.tags.letterSpacing"  class="small-input">
+                                    <label for="boderWidth">Space</label>
+                                </div>
+                                <div class="form-input cool-label" >
+                                    <input type="color" attr-label="Width" name="imageRadius" [(ngModel)]="cardSettings.tags.color"  class="small-input">
+                                    <label for="boderWidth">Font color</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-column">
+                        <div class="settigns-inner-row">
+                            <h4>Price</h4>
+                            <div class="flex-row margin-x-10">
+                                <div class="form-input cool-label" >
+                                    <input type="number" attr-label="Width" name="imageWidth" [(ngModel)]="cardSettings.price.fontSize"  class="small-input">
+                                    <label for="boderWidth">Font size</label>
+                                </div>
+                                <div class="form-input cool-label" >
+                                    <input type="number" attr-label="Width" name="imageWidth" [(ngModel)]="cardSettings.price.letterSpacing"  class="small-input">
+                                    <label for="boderWidth">Space</label>
+                                </div>
+                                <div class="form-input cool-label" >
+                                    <input type="color" attr-label="Width" name="imageRadius" [(ngModel)]="cardSettings.price.color"  class="small-input">
+                                    <label for="boderWidth">Font color</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>    
+        </mat-tab>
+
+
       </mat-tab-group>
 
       <div class="preview">

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { MatTabGroup, MatTab } from '@angular/material/tabs'
 import { FormsModule } from "@angular/forms";
 import { MatChipsModule } from "@angular/material/chips";
@@ -29,15 +29,39 @@ export class CardEditorComponent {
       padding: 10,
       oriantation: 'vertical',
       borderWidth: 1,
-      borderColor: 'd4d4d4',
+      borderColor: '#d4d4d4',
       borderRadius: 20,
     },
     image: {
-      width: 0
+      width: 100,
+      radius: 20
+    },
+    title: {
+      fontSize: 24,
+      color: '#464646',
+      letterSpacing: 0
+    },
+    description: {
+      fontSize: 14,
+      color: '#464646',
+      letterSpacing: 0
+    },
+    tags: {
+      fontSize: 10,
+      color: '#464646',
+      letterSpacing: 0
+    },
+    price: {
+      fontSize: 16,
+      color: '#464646',
+      letterSpacing: 0
     }
   };
 
 
-  // need to make it two way binding 
+  constructor(){
+  }
+
+  
   
 }
