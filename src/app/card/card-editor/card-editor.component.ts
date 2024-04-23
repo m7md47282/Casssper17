@@ -1,9 +1,10 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { MatTabGroup, MatTab } from '@angular/material/tabs'
 import { FormsModule } from "@angular/forms";
 import { MatChipsModule } from "@angular/material/chips";
 
 import { CardComponent } from '../card/card.component';
+import { CommonModule } from '@angular/common';
 
 
 
@@ -12,6 +13,7 @@ import { CardComponent } from '../card/card.component';
   selector: 'app-card-editor',
   standalone: true,
   imports: [
+    CommonModule,
     MatTabGroup,
     MatTab,
     FormsModule,
@@ -22,6 +24,8 @@ import { CardComponent } from '../card/card.component';
   styleUrl: './card-editor.component.sass'
 })
 export class CardEditorComponent {
+  emtyArray = [...Array(10)]
+
   cardSettings = {
     body: {
       width: 265,
@@ -30,11 +34,11 @@ export class CardEditorComponent {
       oriantation: 'vertical',
       borderWidth: 1,
       borderColor: '#d4d4d4',
-      borderRadius: 20,
+      borderRadius: 10,
     },
     image: {
       width: 100,
-      radius: 20
+      radius: 5
     },
     title: {
       fontSize: 24,
@@ -61,6 +65,19 @@ export class CardEditorComponent {
 
   constructor(){
   }
+
+
+  setDefaultDimensions(event: any){
+    if(event.value == "horizantal"){
+      this.cardSettings.body.width = 500
+      this.cardSettings.body.height = 214
+    } else {
+      this.cardSettings.body.width = 265
+      this.cardSettings.body.height = 350
+    }
+  }
+
+
 
   
   

@@ -28,7 +28,7 @@
                             <div class="flex-row">
                                 <div class="margin-x-10">
 
-                                    <mat-chip-listbox aria-label="Oriantation" [(ngModel)]="cardSettings.body.oriantation">
+                                    <mat-chip-listbox aria-label="Oriantation" [(ngModel)]="cardSettings.body.oriantation" (change)="setDefaultDimensions($event)">
                                         <mat-chip-option value="horizantal">Horizantal</mat-chip-option>
                                         <mat-chip-option value="vertical">Vertical</mat-chip-option>
                                       </mat-chip-listbox>
@@ -168,8 +168,10 @@
 
       </mat-tab-group>
 
-      <div class="preview">
+      <div class="preview card-container content-center items-center">
+        <div *ngFor="let i of emtyArray">
             <app-card [card]="cardSettings"></app-card>
+        </div>
       </div>
 </div>
 

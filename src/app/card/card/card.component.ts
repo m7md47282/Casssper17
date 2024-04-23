@@ -12,7 +12,6 @@ import { Card } from '../card-interface';
   styleUrl: './card.component.sass'
 })
 export class CardComponent implements OnInit {
-  emtyArray = [...Array(10)]
   px = "px";
   percent = "%";
 
@@ -54,7 +53,7 @@ export class CardComponent implements OnInit {
 
   card = input(this.cardDefaultSettings)
 
-  
+
  
   ngOnInit(): void {
   }

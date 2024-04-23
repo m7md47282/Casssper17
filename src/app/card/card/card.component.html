@@ -1,18 +1,22 @@
-<div class="card-container content-center items-center">
-    <div *ngFor="let i of emtyArray" class="card" [ngStyle]="{
+<div class="card-container ">
+    <div class="card" [ngClass]="{'horizantal':card().body.oriantation == 'horizantal'}" [ngStyle]="{
         'width': card().body.width + px,
-        'height': card().body.height + px,
+        'min-height': card().body.height + px,
         'border': card().body.borderWidth + 'px solid ' + card().body.borderColor,
         'border-radius': card().body.borderRadius + px,
         'padding': card().body.padding + px,
     }">
-        <div class="card-header">
+        <div class="card-header"
+        [ngStyle]="{
+            'width': card().image.width + percent,
+        }"
+        >
             <div class="image-container">
-                <img [ngStyle]="{
-                    'width': card().image.width + percent,
+                <img 
+                [ngStyle]="{
                     'border-radius': card().image.radius + px,
                 }"
-                src="../../../assets/images/default-card-image.png" alt="">
+                src="../../../assets/images/default-image.jpg" alt="">
             </div>
         </div>
         <div class="card-content">
@@ -49,17 +53,19 @@
                     #hoodie#men#tshirt
                 </span>
             </div>
-        </div>
-        <div class="card-footer">
-            <div class="price">
-                <b
-                [ngStyle]="{
-                    fontSize: card().price.fontSize + px,
-                    color: card().price.color,
-                    letterSpacing: card().price.letterSpacing + px
-                }"
-                >00.00$</b>
+
+            <div class="card-footer">
+                <div class="price">
+                    <b
+                    [ngStyle]="{
+                        fontSize: card().price.fontSize + px,
+                        color: card().price.color,
+                        letterSpacing: card().price.letterSpacing + px
+                    }"
+                    >00.00$</b>
+                </div>
             </div>
         </div>
+        
     </div>
 </div>
