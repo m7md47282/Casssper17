@@ -43,6 +43,13 @@ body
 input:focus, input:focus-visible
     outline: 1px solid $primary
 
+//btns
+button 
+    &.success, &.success.mat-mdc-raised-button:not(:disabled)
+        background-color: #349f47
+        color: white
+
+//inputs
 .form-input
     position: relative
     input
@@ -80,3 +87,4 @@ input:focus, input:focus-visible
                     top: -22%
                     left: 5px
                     scale: .9
+    

@@ -1,0 +1,57 @@
+
+@import ../../../defaults/_variables
+
+
+.page-content
+    padding: 10px
+    margin: 10px
+
+iframe.preview
+    width: 100%
+    height: unset
+
+#editor
+    height: 0 !important
+    overflow: hidden
+#editor.showEditor
+    height: 85vh !important
+
+.section-editor-btns
+    display: flex
+    gap: 10px
+    button
+        padding: 12px
+        border: none
+        min-width: 90px
+        min-height: 40px
+        font-size: 14px
+        border-radius: 25px
+        box-shadow: 0 0 4px 0px #b4b4b4
+
+
+
+
+//grapes
+::ng-deep
+       
+    mat-sidenav-container[_ngcontent-ng-c4067804152] .main[_ngcontent-ng-c4067804152]
+        padding: 0
+        margin: 0
+
+    .gjs-block
+        width: 27%
+   
+
+    .gjs-one-bg 
+        background-color: white !important
+    
+    .gjs-two-color
+        color: $primary-light !important
+
+    svg,  .gjs-block.gjs-one-bg.gjs-four-color-h
+        transition: none !important
+
+        &:hover, .gjs-pn-active
+            color: $primary-dark !important
+            transition: none !important
+    

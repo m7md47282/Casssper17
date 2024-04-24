@@ -1,3 +1,14 @@
 
-<div id="editor" [style.height]="'500px'" #container></div>
+<div id="editor" [ngClass]="{'showEditor': showEditor}" #container></div>
 
+<div class="page-content">
+    <div class="section-editor-btns">
+        <button  mat-raised-button (click)="showEditor = !showEditor" >
+            <mat-icon> brush</mat-icon>
+            <span>Designer</span>
+        </button>
+        <button *ngIf="showEditor" mat-raised-button  class="success" (click)="savetemplate()" [disabled]="!changeHappend" >save</button>
+    </div>
+</div>
+
+<iframe class="preview" [srcdoc]="template" [style.height]="iframe.contentWindow?.document?.body?.scrollHeight + 'px'" #iframe frameborder="0"></iframe>
