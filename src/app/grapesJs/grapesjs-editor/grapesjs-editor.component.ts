@@ -1,15 +1,27 @@
 import { AfterContentInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { grapesjs } from 'grapesjs'
+import basicBlocks  from 'grapesjs-blocks-basic'
+
+import presetWebPage  from "grapesjs-preset-webpage";
+import flexBox from "grapesjs-blocks-flexbox";
+import gjsForms from 'grapesjs-plugin-forms';
+import gradient from 'grapesjs-style-gradient';
+// import grapesjsLorySlider from "grapesjs-lory-slider";
 
 @Component({
   selector: 'app-grapesjs-editor',
   standalone: true,
-  imports: [],
+  imports: [
+    
+  ],
   templateUrl: './grapesjs-editor.component.html',
   styleUrl: './grapesjs-editor.component.sass'
 })
 export class GrapesjsEditorComponent implements OnInit, AfterContentInit {
   editor: any;
+  htmlData: any;
+  cssData: any;
+
   @ViewChild('container', { static: true }) container: ElementRef<HTMLDivElement> | undefined;
 
   ngAfterContentInit(): void {
@@ -18,35 +30,17 @@ export class GrapesjsEditorComponent implements OnInit, AfterContentInit {
       this.editor = grapesjs.init({
         container: '#editor',
         fromElement: true,
-        blockManager: {
-          blocks: [
-            {
-              id: 'section', // id is mandatory
-              label: '<b>Section</b>', // You can use HTML/SVG inside labels
-              attributes: { class:'gjs-block-section' },
-              content: `<section>
-                <h1>This is a simple title</h1>
-                <div>This is just a Lorem text: Lorem ipsum dolor sit amet</div>
-              </section>`,
-            }, {
-              id: 'text',
-              label: 'Text',
-              content: '<div data-gjs-type="text">Insert your text here</div>',
-            }, {
-              id: 'image',
-              label: 'Image',
-              // Select the component once it's dropped
-              select: true,
-              // You can pass components as a JSON instead of a simple HTML string,
-              // in this case we also use a defined component type `image`
-              content: { type: 'image' },
-              // This triggers `active` event on dropped components and the `image`
-              // reacts by opening the AssetManager
-              activate: true,
-            }
-          ]
-        },
+        plugins: [basicBlocks, presetWebPage, gjsForms, gradient, flexBox],
+        pluginsOpts: {
+          'presetWebPage': {
+            enable: true
+          }
+        }
+
       });
+
+      this.editor.setComponents(this.htmlData);
+      this.editor.setStyle(this.cssData);
 
     // this.editor.blockManager.add('h1-block', {
     //   label: 'Heading',
