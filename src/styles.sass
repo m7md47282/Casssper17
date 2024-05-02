@@ -11,6 +11,9 @@ body
     padding: 0
     font-family: inter
 
+.full-width
+    width: 100%
+
 .clickable
     cursor: pointer
         
@@ -18,9 +21,21 @@ body
     display: flex
     justify-content: center
 
+.content-end
+    display: flex
+    justify-content: flex-end
+
+.content-start
+    display: flex
+    justify-content: flex-start
+
 .items-center
     display: flex
     align-items: center
+
+.space-between
+    display: flex
+    justify-content: space-between
 
 .gap-10
     gap: 10px
@@ -43,21 +58,49 @@ body
 input:focus, input:focus-visible
     outline: 1px solid $primary
 
+
+.no-result
+    display: flex
+    justify-content: center
+    justify-items: center
+    align-items: center
+    color: $gray
+    p
+        font-size: 24px
+    .add
+        font-size: 18px
+        color: $primary
+        cursor: pointer
+        &:hover
+            color: $primary-dark 
+            mat-icon
+                color: $primary-dark !important
+        mat-icon
+            color: $primary !important
+
+
+.color-black
+    color: $black !important
+    &:hover
+        color: $gray  !important
+
 //btns
 button 
     &.success, &.success.mat-mdc-raised-button:not(:disabled)
         background-color: #349f47
         color: white
 
+
 //inputs
 .form-input
     position: relative
     input
-        height: 35px
+        height: 47px
         border: 1px solid #d4d4d4
         border-radius: 3px
         position: relative
         padding: 0 5px
+        width: calc( 100% - 10px) // 10px are the paddings 5px, 5px
         &[type=color]
             padding: 0
             border: none
@@ -73,8 +116,9 @@ button
     &.cool-label
         label
             position: absolute
-            top: 22%
+            top: calc( 50% - 0.6em ) 
             left: 10px
+            line-height: 20px
             z-index: 99
             color: gray
             pointer-events: none
@@ -88,3 +132,82 @@ button
                     left: 5px
                     scale: .9
     
+
+.mat-mdc-snack-bar-container.success 
+    .mdc-snackbar__surface
+        background-color: #43cd66
+  
+.mat-mdc-snack-bar-container.error 
+    .mdc-snackbar__surface
+        background-color: #bf3a2b
+  
+.mat-mdc-snack-bar-container.info 
+    .mdc-snackbar__surface
+        background-color: #ddd03c
+  
+
+//modal
+.modal
+    display: none
+    &.open
+        display: block
+        .modal-background
+            background-color: #80808023
+            opacity: 1
+            position: fixed
+            top: 0
+            left: 0
+            width: 100vw
+            height: 100vh
+            z-index: 9999
+            display: flex
+            justify-content: center
+            justify-items: center
+            align-items: center
+            .modal-container
+                z-index: 999999
+                background-color: white
+                padding: 20px
+                min-width: 320px
+                box-shadow:  0 0 15px #50505096
+                border-radius: 25px
+                min-height: 150px
+                display: flex
+                flex-direction: column
+                justify-content: space-between
+                animation: fade-in .12s ease-in
+                .modal-header
+                    font-size: 21px
+                    display: flex
+                    justify-content: center
+                .modal-content
+                    font-size: 16px
+                .modal-footer
+                    button
+                        &.close
+                            padding: 10px
+                            background-color: white
+                            border: none
+                            box-shadow: none
+                            color: $primary
+                            font-size: 14px
+                            border-radius: 10px
+                        &:hover
+                            background-color: $primary-lightest
+                        &.okay
+                            background-color: $primary
+                            color: white
+
+
+                
+
+
+@keyframes fade-in
+    0%
+        opacity: 0
+        scale: .75
+
+    100%
+        opacity: 1
+        scale: 1
+
