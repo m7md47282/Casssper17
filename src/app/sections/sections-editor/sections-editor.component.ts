@@ -38,9 +38,9 @@ export class SectionsEditorComponent implements OnInit{
   openModal: boolean = false
   selectedSection: {_id?:string, content?:string, title?:string} = {}
   saveEvent: any;
-
-
-
+  confirmSaveModal: boolean = false;
+  confirmDeleteModal: boolean = false;
+  deleteingSectionId: string = '';
 
 
   @ViewChild(GrapesjsEditorComponent) grapesjsEditorComponent!: GrapesjsEditorComponent; 
@@ -68,14 +68,12 @@ export class SectionsEditorComponent implements OnInit{
       this.openModal = true
       return
     }
-
-     this.save(event) 
+    this.confirmSaveModal = true
 
   } 
 
   save(event?: any){
     event = event || this.saveEvent
-    console.log(event, this.selectedSection);
     
     let payload = {
       title: this.selectedSection.title,
@@ -116,16 +114,11 @@ export class SectionsEditorComponent implements OnInit{
       this.htmlData = ''
       return
     }
-
-    console.log('ths is the sectiom', section);
-    
     
     this.htmlData = section?.content || ''
     this.showEditor = true
     this.isEdit = true
     this.selectedSection = section
-    console.log('this is the secletedsection', this.selectedSection);
-    
 
   }
 
@@ -155,5 +148,10 @@ export class SectionsEditorComponent implements OnInit{
     })
 
 
+  }
+
+  openDeleteModal(sectionId: string){
+    this.deleteingSectionId = sectionId;
+    this.confirmDeleteModal = true
   }
 }

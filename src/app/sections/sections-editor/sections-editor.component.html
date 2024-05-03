@@ -35,7 +35,7 @@
           </mat-expansion-panel-header>
           <mat-action-row>
             <mat-icon class="color-black clickable" (click)="setTemplate(section)">edit_square</mat-icon>
-            <mat-icon class="color-black clickable" (click)="deleteTemplate(section._id)">delete</mat-icon>
+            <mat-icon class="color-black clickable" (click)="openDeleteModal(section._id)">delete</mat-icon>
           </mat-action-row>
           <iframe class="preview" [srcdoc]="section.content"  #iframe frameborder="0"></iframe>
         </mat-expansion-panel>
@@ -59,6 +59,44 @@
         <div class="items-center gap-10 content-end">
           <button class="close" (click)="openModal = false">Close</button>
           <button class="okay" mat-button [disabled]="!sectionForm.valid" type="submit">Save</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="modal" [ngClass]="{'open': confirmSaveModal}">
+  <div class="modal-background">
+    <form class="modal-container">
+      <div class="modal-header"></div>
+      <div class="modal-content">
+        <div class="form-input cool-label" >
+          <p>Are you sure you want to save!</p>
+        </div>
+      </div>
+      <div class="modal-footer"> 
+        <div class="items-center gap-10 content-end">
+          <button class="close" (click)="confirmSaveModal = false">Close</button>
+          <button class="okay" mat-button (click)="save(); confirmSaveModal = false" type="submit">Save</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="modal" [ngClass]="{'open': confirmDeleteModal}">
+  <div class="modal-background">
+    <form class="modal-container">
+      <div class="modal-header"></div>
+      <div class="modal-content">
+        <div class="form-input cool-label" >
+          <p>Are you sure you want to delete?</p>
+        </div>
+      </div>
+      <div class="modal-footer"> 
+        <div class="items-center gap-10 content-end">
+          <button class="close" (click)="confirmDeleteModal = false">Close</button>
+          <button class="error" mat-button (click)="deleteTemplate(deleteingSectionId); confirmDeleteModal = false " type="submit">Delete</button>
         </div>
       </div>
     </form>
