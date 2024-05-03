@@ -82,9 +82,6 @@ export class SectionsEditorComponent implements OnInit{
       content: event.changingThisBreaksApplicationSecurity,
       _id: this.selectedSection?._id
     }
-
-    console.log('this is the payload form the controller', payload);
-    
     
     this.SectionsService.saveSection(payload).subscribe((response)=>{
       if(response.success){
