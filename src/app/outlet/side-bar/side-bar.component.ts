@@ -37,18 +37,24 @@ export class SideBarComponent {
       {
         title: 'Settings',
         icon: 'engineering',
-        subMenu:  [
+        subMenu: [
           {
             title: 'Product card',
             icon: 'view_carousel',
             routerLink: '/card-editor'
           },
           {
+            title: 'Pages',
+            icon: 'auto_stories',
+            routerLink: '/pages-editor'
+          },
+          {
             title: 'Sections',
-            icon: 'webe',
+            icon: 'web',
             routerLink: '/section-editor'
           },
-      ],
+          
+        ],
       },
       {
         title: 'Support',

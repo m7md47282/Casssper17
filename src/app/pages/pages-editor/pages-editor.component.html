@@ -1,0 +1,12 @@
+<div class="inner-side-bar">
+    <div *ngFor="let section of sections">
+        <div class="section-item">
+          <div>{{ section.title }}</div>
+          <!-- <div>{{ section.content }}</div> -->
+          <div>
+            <button (click)="editSection(section)">Edit</button>
+            <button (click)="deleteSection(section)">Delete</button>
+          </div>
+        </div>
+      </div>
+</div>

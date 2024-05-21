@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
-import { GetRequest } from '../api-interfaces';
+import { IGetRequest } from '../api-interfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -30,7 +30,7 @@ export class SectionsService {
   }
 
   getSections(payload: any){
-    return this.http.get<GetRequest> ( 
+    return this.http.get<IGetRequest> ( 
       this.apiUrl + '/sections',
       payload ,
       )

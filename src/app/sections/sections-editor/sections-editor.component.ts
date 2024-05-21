@@ -10,7 +10,7 @@ import { GrapesjsEditorComponent } from '../../grapesJs/grapesjs-editor/grapesjs
 import { SectionsService } from '../sections.service';
 import { section } from '../section-interface';
 
-import { GetRequest } from '../../api-interfaces';
+import { IGetRequest } from '../../api-interfaces';
 import { SnackBarService } from '../../shared/snakBar/snack-bar.service';
 import { FormsModule } from '@angular/forms';
 
